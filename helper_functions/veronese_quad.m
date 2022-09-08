@@ -10,6 +10,7 @@
 %     powers = [2 0; 1 1; 0 2]
 %
 % Copyright @ Rene Vidal, 2003
+% Modified by Bengisu Ozbay o be used for quadratic surfaces, 2020
 
 function [y,powers] = veronese_quad(x,n,scale,powers)
 x_orig = x;
@@ -36,10 +37,7 @@ end
   y=xpower(powers(:,1)+1,:,1);
   for(i=2:K)
       y=y.*xpower(powers(:,i)+1,:,i);
-  end;
-%   index = find(abs(x) < 1e-10);
-%   x(index) = 1e-10;
-%   y = exp(powers*log(x));
+  end
 end
 
 if isreal(x)
