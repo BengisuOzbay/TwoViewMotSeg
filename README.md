@@ -8,8 +8,7 @@ We address the problem of segmenting moving rigid objects based on two-view imag
 ## Introduction
 Motion segmentation –segmenting distinct moving objects in a sequence of frames– has a wide range of applications in computer vision and robotics. While existing methods for trajectory association and object segmentation are effective, they are often computationally expensive. Our proposed method addresses these issues by using Christoffel polynomials to efficiently segment points one surface at a time.
 
-## Introduction
-Motion segmentation –segmenting distinct moving objects in a sequence of frames– has a wide range of applications in computer vision and robotics. While existing methods for trajectory association and object segmentation are effective, they are often computationally expensive. Our proposed method addresses these issues by using Christoffel polynomials to efficiently segment points one surface at a time.
+![Example Image 1](images/intro.png)
 
 ## Related Work
 ### Sampling Based Approaches
@@ -21,6 +20,7 @@ The T-linkage approach starts with random sampling to generate hypotheses from m
 ## Problem Setup
 The goal of this paper is to assign correspondences to objects by clustering points lying on quadratic surfaces. Each correspondence between two perspective views of a scene must satisfy the epipolar constraint and lie on the quadratic surface defined by the fundamental matrix of the object.
 
+![Example Image 1](images/problemSetup.png)
 ## Methodology
 ### One at a Time Algebraic Clustering
 Our iterative algorithm uses the Christoffel polynomial to approximate the support of each quadratic surface and segments points one at a time. Reliable inliers are identified and used to refine the polynomial estimate, and the process is repeated until all points are labeled.
@@ -36,10 +36,14 @@ We use a restricted Veronese map and estimate the fundamental matrix from reliab
 - **BC and BCD**: Image pairs with a large number of correspondences.
 - **Pairwise**: A dataset for pairwise matching with noisy SIFT correspondences.
 
+![Example Image 1](images/datasets.png)
 ### Results and Analysis
 Our method consistently outperforms state-of-the-art algorithms in terms of both accuracy and computational time. Detailed results for each dataset are provided in the paper.
 
+![Example Image 1](images/results.png)
 ## Conclusion
 Using the Christoffel polynomial for algebraic clustering and a one-at-a-time strategy results in a robust and efficient segmentation algorithm. Our method achieves comparable or better accuracy than existing methods while being significantly faster.
 
 ## Supplementary Materials
+- [Link to Supplementary Video](supplemental/PaperID6619_Supplemental_480p.mov)
+- [Link to Supplementary pdf](supplemental/PaperID6619_supplemental.pdf)
